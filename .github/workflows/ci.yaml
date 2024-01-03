@@ -1,3 +1,4 @@
+#...yaml
 name : CI Pipeline
 
 on:
@@ -24,8 +25,16 @@ jobs:
           python main.py
 
 # only ci\cd specific code
-      # - name: Create CML report
-      #   env:
-      #     REPO_TOKEN : 
+      - name: Create CML report
+        env:
+          REPO_TOKEN : ${{ secret.Personal_Token}}
+        run : |
+            echo "# First Line of our Report" >> report.md
+            echo "## Bar Graph" >> report.md
+            echo '![](./bars.png "Bar Plot")' >> report.md
+            echo "## Line Plot" >> report.md
+            echo '![](./lines.png "Bar Plot")' >> report.md
+
+            cml comment create report.md
 
     
