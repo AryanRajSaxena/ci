@@ -1,0 +1,31 @@
+name : CI Pipeline
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on : windows-latest
+
+    steps:
+      - name : Checkout Repository
+        uses : actions/checkout@v3
+
+      - name : Set up Python
+        uses : action/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name : Install Dependencies
+        run: |
+          pip install r requirements.txt
+      - name: run main file
+        run: |
+          python main.py
+
+# only ci\cd specific code
+      # - name: Create CML report
+      #   env:
+      #     REPO_TOKEN : 
+
+    
