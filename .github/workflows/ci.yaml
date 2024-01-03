@@ -17,6 +17,9 @@ jobs:
         with:
           python-version: 3.11
 
+      - name: Set up cml
+        uses : iteraive/setup-cml@v2
+
       - name : Install Dependencies
         run: |
           pip install -r requirements.txt
