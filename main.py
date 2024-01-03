@@ -9,9 +9,9 @@ bar_colors = ['tab:red', 'tab:blue', 'tab:red', 'tab:orange']
 
 ax.bar(fruits, counts, label=bar_labels, color=bar_colors)
 
-ax.set_ylabel('fruit supply')
+ax.set_ylabel('Fruit supply')
 ax.set_title('Fruit supply by kind and color')
-ax.legend(title='Fruit color')
+ax.legend(title='Fruits color')
 
 plt.savefig('bars.png', bbox_inches='tight')
 
