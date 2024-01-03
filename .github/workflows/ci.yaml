@@ -27,7 +27,7 @@ jobs:
 # only ci\cd specific code
       - name: Create CML report
         env:
-          REPO_TOKEN : ${{ secret.Personal_Token}}
+          REPO_TOKEN : ${{ secrets.Personal_Token}}
         run : |
             echo "# First Line of our Report" >> report.md
             echo "## Bar Graph" >> report.md
